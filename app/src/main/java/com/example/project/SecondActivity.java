@@ -22,12 +22,13 @@ public class SecondActivity extends AppCompatActivity {
         sharePref = getSharedPreferences("sharedPrefString", MODE_PRIVATE);
         sharePrefEditor = sharePref.edit();
         EditText addName = findViewById(R.id.editTextAddName);
-        addName.setText(sharePref.getString("sharedPrefString", "Du måste skriva in ditt namn för att det ska visas här."));
+        addName.setText(sharePref.getString("sharedPrefString", "Skriv namn"));
 
         Button buttonSecond = findViewById(R.id.buttonSend);
         buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                storedPrefData();
                 Intent screenIntent = new Intent(SecondActivity.this, MainActivity.class);
                 startActivity(screenIntent);
             }

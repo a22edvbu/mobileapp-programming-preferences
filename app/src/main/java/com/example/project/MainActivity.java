@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        sharePref = getPreferences(MODE_PRIVATE);
+        sharePref = getSharedPreferences("sharedPrefString", MODE_PRIVATE);
         sharePrefEditor = sharePref.edit();
 
         TextView prefTextRef=new TextView(this);
         prefTextRef = (TextView)findViewById(R.id.textView);
-        prefTextRef.setText(sharePref.getString("sharedPrefString", "Du måste skriva in ditt namn för att det ska visas här."));
+        prefTextRef.setText(sharePref.getString("sharedPrefString", "Skriv."));
 
         Button buttonMain = findViewById(R.id.buttonGoSecond);
         buttonMain.setOnClickListener(new View.OnClickListener() {
@@ -37,5 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(screenIntent);
             }
         });
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        TextView prefTextData = findViewById(R.id.textView);
+        prefTextData.setText(sharePref.getString("sharedPrefString", "Name"));
     }
 }
