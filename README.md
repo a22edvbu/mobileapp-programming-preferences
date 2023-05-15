@@ -1,42 +1,10 @@
+# Shared Preferences
 
-# Rapport
-
-**Skriv din rapport här!**
-
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
-```
-
-Bilder läggs i samma mapp som markdown-filen.
-
-![](android.png)
-
-Läs gärna:
-
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+I denna uppgift fick vi i uppdrag att skapa en app där användaren kan skriva in ett namn i en editText och få en vanlig textview att visa namnet. Detta görs med hjälp av shared preferences.
+Först av allt forkade och klonade jag projektet från LenaSYS github sida och öppnade projektet med android studio. Efter det skapade jag en till aktivity vid namn SecondActivity.java där jag lade till knappen buttonSend och editText editTextAddName. Dessa widgets kommer lagra och skicka datan från användaren och kommer sedan skrivas ut i en textView i MainActivity.java.
+För att nå dessa knappar i SecondActivity behöver användaren trycka på knappen buttonSendSecond (Add name) som tar användaren till den andra aktiviteten. 
+![img.png](img.png)
+För att komma tillbaka till MainActivity ska användaren skriva in sitt namn i editText, som kommer lagra värdet i arrayen sharedPrefString, och trycka på "Apply"-knappen (buttonSend). 
+![img_1.png](img_1.png)
+Detta görs genom att hämta värdet från editViewAddName och anger värdet hos addName. Värdet läggs sedan till i sharedPrefString och anger sedan värdet för editText i MainActivity.
+![img_2.png](img_2.png)

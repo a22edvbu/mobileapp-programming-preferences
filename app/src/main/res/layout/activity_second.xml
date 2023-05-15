@@ -13,7 +13,7 @@
         android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Write you name here:"
+        android:text="Write you name here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonSend"
         app:layout_constraintStart_toStartOf="parent"
